@@ -10,5 +10,11 @@ export default {
         Links: 'links',
       },
     },
+    Edit: {
+      path: 'edit',
+      screens: {
+        Edit: 'edit',
+      },
+    },
   },
 };

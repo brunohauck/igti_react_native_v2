@@ -2,12 +2,13 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { Content, Form, Item, Input, Label, Button, Icon, Text } from 'native-base';
 import axios from 'axios';
-export default class LinksScreen extends React.Component {
+export default class EditScreen extends React.Component {
   constructor(props) {
 		super(props);
-		const { id, name, username, email, phone, password } = props.navigation.state.params.user;
+		const { _id, name, username, email, phone, password } = this.props.route.params.user;
+
 		this.state = {
-			_id: id,
+			_id: _id,
 			name: name,
 			username: username,
 			email: email,
@@ -52,7 +53,7 @@ export default class LinksScreen extends React.Component {
 		} else if (this.validatePassword(this.state.password) == false) {
 			alert('Please enter a valid password')
 		} else {
-			const url = global.api+'/api/edituser';
+			const url = 'http://localhost:4000/api/edituser';
 		
 			axios.put(url, vm.state)
 				.then(function (response) {
@@ -66,7 +67,7 @@ export default class LinksScreen extends React.Component {
 	}
 	formSubmitDelete = () => {
 		const vm = this;
-		const url = global.api+'/api/deleteuser/'+this.state._id;
+		const url = 'http://localhost:4000/api/deleteuser/'+this.state._id;
 		console.log(url)
 		axios.delete(url, vm.state)
 			.then(function (response) {

@@ -60,8 +60,7 @@ export default class HomeListComponent extends React.Component {
 				<View>
 					<UserList
 						users={this.state.users}
-						onPressItem={pageParams => {
-							console.log(pageParams)
+						onPressItem={pageParams => {											
 							this.props.navigation.navigate('Edit', pageParams);
 						}} />
 				</View>

@@ -21,6 +21,7 @@ const UserItem = props => {
 				//		console.log(pageParams)
 				//		this.props.navigation.navigate('Edit', pageParams);
 				//	}}
+				console.log(user)
 				navigateToEditPage({ user });
 			}}>
 				
